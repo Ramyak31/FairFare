@@ -1,7 +1,5 @@
 # Fair Fare AI – Transparent Ride Pricing Model
-Team 7 – INFO6105 Final Project
-
-Akassh Paramasivan, Ramya Karuthappandian
+INFO6105 Final Project
 
 ## Overview
 
