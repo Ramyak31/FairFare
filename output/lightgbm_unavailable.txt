@@ -1,0 +1,9 @@
+LightGBM could not be used in this environment.
+
+Reason:
+OSError("dlopen(/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/lightgbm/lib/lib_lightgbm.dylib, 0x0006): Library not loaded: @rpath/libomp.dylib\n  Referenced from: <D44045CD-B874-3A27-9A61-F131D99AACE4> /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/lightgbm/lib/lib_lightgbm.dylib\n  Reason: tried: '/opt/homebrew/opt/libomp/lib/libomp.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/opt/homebrew/opt/libomp/lib/libomp.dylib' (no such file), '/opt/local/lib/libomp/libomp.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/opt/local/lib/libomp/libomp.dylib' (no such file), '/opt/homebrew/opt/libomp/lib/libomp.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/opt/homebrew/opt/libomp/lib/libomp.dylib' (no such file), '/opt/local/lib/libomp/libomp.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/opt/local/lib/libomp/libomp.dylib' (no such file)")
+
+This is likely due to Python 3.13 + missing libomp.dylib on macOS, or lack of a compatible binary wheel.
+
+As a result, we **skipped LightGBM training** and only report Linear Regression and Random Forest results in the main analysis.
+LightGBM can be run in a different environment (e.g., Google Colab with Python 3.10–3.12).

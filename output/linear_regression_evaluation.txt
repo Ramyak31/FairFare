@@ -1,0 +1,54 @@
+Linear Regression Model – Fare Prediction
+=========================================
+
+Training duration: 2.41 seconds
+
+TRAIN METRICS:
+  RMSE : 5.3076
+  MAE  : 2.1167
+  MAPE : 21.45%
+  R^2  : 0.9101
+  RMSLE: 0.1882
+
+TEST METRICS:
+  RMSE : 12.5087
+  MAE  : 2.1964
+  MAPE : 18.63%
+  R^2  : 0.3874
+  RMSLE: 0.1909
+
+Overfitting check:
+  Train RMSE: 5.3076, Test RMSE: 12.5087
+  Train R^2 : 0.9101, Test R^2 : 0.3874
+
+Residual analysis (test):
+  Mean residual    : 0.1608
+  Std residual     : 12.5077
+  Min residual     : -7279.0647
+  Max residual     : 348.5867
+
+Top 15 features by |coefficient|:
+  trip_distance: coef=70.311562, |coef|=70.311562
+  distance_squared: coef=-66.517843, |coef|=66.517843
+  pickup_borough_EWR: coef=47.926111, |coef|=47.926111
+  dropoff_borough_EWR: coef=22.038574, |coef|=22.038574
+  pickup_borough_Staten Island: coef=-6.977739, |coef|=6.977739
+  trip_duration_minutes: coef=1.901629, |coef|=1.901629
+  duration_squared: coef=-1.692186, |coef|=1.692186
+  avg_speed_mph: coef=-1.630239, |coef|=1.630239
+  weather_distance: coef=-1.583327, |coef|=1.583327
+  traffic_volume_category_medium: coef=-1.470887, |coef|=1.470887
+  dropoff_borough_Manhattan: coef=1.405746, |coef|=1.405746
+  dropoff_borough_Brooklyn: coef=1.340114, |coef|=1.340114
+  dropoff_borough_Queens: coef=1.055636, |coef|=1.055636
+  pickup_borough_Manhattan: coef=1.008547, |coef|=1.008547
+  pickup_borough_Brooklyn: coef=0.881262, |coef|=0.881262
+
+Absolute error by fare range (test):
+                 mean    median   count
+fare_range                             
+0-10         1.681846  1.622641  137254
+10-20        1.387317  1.057971  161338
+20-40        3.227002  2.646592   61267
+40-80        5.289847  2.824494   29922
+80+         22.378732  4.608466    2253

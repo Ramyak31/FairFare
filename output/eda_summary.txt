@@ -1,0 +1,130 @@
+=== NYC Taxi + Weather + Zones EDA Summary ===
+
+Dataset shape: (1960211, 32)
+
+=== Missing Value Summary (%): ===
+VendorID                   0.000000
+tpep_pickup_datetime       0.000000
+tpep_dropoff_datetime      0.000000
+passenger_count            0.000000
+trip_distance              0.000000
+RatecodeID                 0.000000
+store_and_fwd_flag         0.000000
+PULocationID               0.000000
+DOLocationID               0.000000
+payment_type               0.000000
+fare_amount                0.000000
+extra                      0.000000
+mta_tax                    0.000000
+tip_amount                 0.000000
+tolls_amount               0.000000
+improvement_surcharge      0.000000
+total_amount               0.000000
+congestion_surcharge       0.000000
+airport_fee                0.000000
+Airport_fee              100.000000
+pickup_date                0.000000
+pickup_borough             1.320011
+pickup_zone                1.320011
+temperature_avg            0.001581
+precipitation              0.001581
+is_raining                 0.001581
+temp_category              0.001581
+dropoff_borough            0.968620
+dropoff_zone               0.968620
+dtype: float64
+
+=== Numerical Stats ===
+        fare_amount  trip_distance  temperature_avg  precipitation
+count  1.960211e+06   1.960211e+06     1.960180e+06   1.960180e+06
+mean   1.872129e+01   3.532366e+00     4.325775e+01   1.219683e-01
+std    1.737709e+01   2.172791e+01     5.579376e+00   1.794973e-01
+min    1.000000e-02   1.000000e-02     3.423333e+01   0.000000e+00
+25%    8.600000e+00   1.100000e+00     3.930000e+01   0.000000e+00
+50%    1.280000e+01   1.800000e+00     4.220000e+01   2.000000e-02
+75%    2.050000e+01   3.400000e+00     4.913333e+01   2.333333e-01
+max    6.568000e+02   9.683760e+03     5.480000e+01   6.033333e-01
+
+=== Outliers ===
+{'fares_over_500': np.int64(10), 'distance_over_100_miles': np.int64(25)}
+
+=== Top Pickup Zones ===
+pickup_zone
+JFK Airport                     108933
+Upper East Side South            93723
+Upper East Side North            88762
+Midtown Center                   86254
+Penn Station/Madison Sq West     71665
+Midtown East                     67413
+Times Sq/Theatre District        65187
+Lincoln Square East              64261
+LaGuardia Airport                60505
+Murray Hill                      56731
+Name: count, dtype: int64
+
+=== Top Zones by Avg Fare ===
+pickup_zone
+Mariners Harbor                 138.100000
+Newark Airport                   92.833182
+Van Cortlandt Park               88.680000
+Brighton Beach                   70.905556
+Baisley Park                     67.494794
+Arden Heights                    64.020513
+South Jamaica                    63.825338
+Springfield Gardens South        62.329442
+Flushing Meadows-Corona Park     60.914962
+JFK Airport                      60.618989
+Name: fare_amount, dtype: float64
+
+=== Temporal Patterns ===
+Pickups by hour:
+hour
+0      54390
+1      37726
+2      26073
+3      17073
+4      10838
+5      11245
+6      26860
+7      53508
+8      72818
+9      83275
+10     93053
+11    100422
+12    110524
+13    115636
+14    124430
+15    128445
+16    127382
+17    135576
+18    139192
+19    124473
+20    106509
+21    101236
+22     89332
+23     70195
+Name: count, dtype: int64
+
+Pickups by day of week:
+day_of_week
+Thursday     312318
+Friday       309351
+Saturday     301594
+Wednesday    295218
+Tuesday      274622
+Sunday       245809
+Monday       221299
+Name: count, dtype: int64
+
+Pickups by month:
+month
+1     1960180
+10          6
+12         25
+Name: count, dtype: int64
+
+=== Key Observations ===
+- Check impact of extreme fares and distances on modeling.
+- Hour, day_of_week, and month show clear temporal patterns.
+- Borough and zone have different average fares—useful for features.
+- Weather (rain, temp_category) may have moderate effect on fares.

@@ -1,0 +1,40 @@
+Random Forest Regression – Evaluation Report
+===========================================
+
+Training time: 301.99 seconds
+
+TRAIN METRICS:
+  RMSE : 1.6569
+  MAE  : 0.4032
+  MAPE : 12.44%
+  R2   : 0.9912
+  RMSLE: 0.0460
+
+TEST METRICS:
+  RMSE : 2.1165
+  MAE  : 0.5590
+  MAPE : 11.53%
+  R2   : 0.9825
+  RMSLE: 0.0579
+
+Top 20 Feature Importances:
+  distance_squared: 0.461484
+  trip_distance: 0.448742
+  RatecodeID: 0.041283
+  duration_squared: 0.018650
+  trip_duration_minutes: 0.017426
+  avg_speed_mph: 0.001882
+  DOLocationID: 0.001519
+  pickup_density: 0.000888
+  hourly_pickup_count: 0.000863
+  PULocationID: 0.000829
+  zone_hourly_pickup_count: 0.000653
+  weather_distance: 0.000635
+  surge_likelihood: 0.000614
+  payment_type: 0.000510
+  VendorID: 0.000504
+  hour: 0.000441
+  trip_complexity: 0.000408
+  day_of_month: 0.000283
+  dropoff_borough_EWR: 0.000209
+  day_of_week: 0.000202

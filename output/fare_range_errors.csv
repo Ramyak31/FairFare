@@ -1,0 +1,10 @@
+Model,FareRange,MeanAbsError
+Linear Regression,Low (0–15],1.4229795110181804
+Linear Regression,Medium (15–50],2.656449024734305
+Linear Regression,High (50+),8.162217788813752
+Random Forest,Low (0–15],0.35591079539677506
+Random Forest,Medium (15–50],0.7543064693514786
+Random Forest,High (50+),1.6853414269706333
+HistGradientBoosting,Low (0–15],0.38424666535655827
+HistGradientBoosting,Medium (15–50],0.8395353954957335
+HistGradientBoosting,High (50+),2.2664050310147283

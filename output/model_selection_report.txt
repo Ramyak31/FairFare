@@ -1,0 +1,50 @@
+MODEL COMPARISON & SELECTION REPORT
+===================================
+
+Comparison table (metrics):
+                      Train_RMSE  Test_RMSE  Train_MAE  Test_MAE  Train_MAPE  Test_MAPE  Train_R2   Test_R2  Train_Time_s  Pred_Time_s  RMSE_Gap
+Model                                                                                                                                           
+Linear Regression       5.307594  12.508668   2.116691  2.196437   21.452854  18.627779  0.910100  0.387425           NaN     0.253020  7.201074
+Random Forest           1.656948   2.116527   0.403223  0.559040   12.437571  11.529472  0.991238  0.982462           NaN     9.622514  0.459579
+HistGradientBoosting    2.230088   2.318082   0.623631  0.636380   16.260962  12.734553  0.984129  0.978962           NaN     2.112024  0.087994
+
+Overfitting analysis (RMSE Gap = Test_RMSE - Train_RMSE):
+Model
+Linear Regression       7.201074
+Random Forest           0.459579
+HistGradientBoosting    0.087994
+
+Best model:
+- Name       : Random Forest
+- Test RMSE  : 2.1165
+- Train RMSE : 1.6569
+- RMSE Gap   : 0.4596
+
+Fare range error summary (Mean Absolute Error):
+               Model      FareRange  MeanAbsError
+   Linear Regression     Low (0–15]      1.422980
+   Linear Regression Medium (15–50]      2.656449
+   Linear Regression     High (50+)      8.162218
+       Random Forest     Low (0–15]      0.355911
+       Random Forest Medium (15–50]      0.754306
+       Random Forest     High (50+)      1.685341
+HistGradientBoosting     Low (0–15]      0.384247
+HistGradientBoosting Medium (15–50]      0.839535
+HistGradientBoosting     High (50+)      2.266405
+
+Prediction correlations between models:
+                      Linear Regression  Random Forest  HistGradientBoosting
+Linear Regression              1.000000       0.757743              0.757935
+Random Forest                  0.757743       1.000000              0.997113
+HistGradientBoosting           0.757935       0.997113              1.000000
+
+Key insights:
+- The best model is selected using lowest Test RMSE.
+- RMSE gap helps diagnose overfitting (large gap = overfit).
+- Fare-range errors show which model works better for low vs high fares.
+- Prediction correlations indicate how similarly the models behave.
+
+Recommendations:
+- Use the best model above for deployment.
+- Consider further hyperparameter tuning on the best model.
+- Investigate high-residual trips (outliers) for data quality issues.

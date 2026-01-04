@@ -1,0 +1,85 @@
+HIDDEN PRICING INDEX (HPI) ANALYSIS REPORT
+Fair Ride Fare Manipulation Detection System
+================================================================================
+
+[SECTION 2: EXECUTIVE SUMMARY]
+Total rides analyzed: 392,034
+Unfair rides detected (HPI > 1.30): 327 (0.08%)
+Total overcharge detected: $10,383.96
+Average overcharge per unfair ride: $31.76
+Average overcharge percentage: 77.41%
+
+[SECTION 3: HPI STATISTICS]
+Mean HPI: 1.0005
+Median HPI: 1.0000
+Std Dev: 0.0616
+Min: 0.0001
+Max: 11.2212
+95th percentile: 1.0772
+99th percentile: 1.1220
+
+[SECTION 4: UNFAIR PRICING THRESHOLDS]
+Conservative (HPI > 1.20): 624 rides (0.16%)
+Moderate    (HPI > 1.30): 327 rides (0.08%)
+Aggressive  (HPI > 1.50): 148 rides (0.04%)
+
+[SECTION 5: TOP 20 HIGH-RISK ZONES]
+Zone 220 (Zone 220): 9 rides, 1 unfair (11.11%), avg HPI 1.033
+Zone 205 (Zone 205): 16 rides, 1 unfair (6.25%), avg HPI 1.024
+Zone 181 (Zone 181): 79 rides, 1 unfair (1.27%), avg HPI 1.007
+Zone 12 (Zone 12): 88 rides, 1 unfair (1.14%), avg HPI 1.007
+Zone 130 (Zone 130): 109 rides, 1 unfair (0.92%), avg HPI 1.004
+Zone 7 (Zone 7): 142 rides, 1 unfair (0.70%), avg HPI 1.007
+Zone 116 (Zone 116): 252 rides, 1 unfair (0.40%), avg HPI 1.003
+Zone 232 (Zone 232): 324 rides, 1 unfair (0.31%), avg HPI 1.004
+Zone 4 (Zone 4): 380 rides, 1 unfair (0.26%), avg HPI 1.003
+Zone 88 (Zone 88): 899 rides, 2 unfair (0.22%), avg HPI 1.004
+Zone 158 (Zone 158): 3,246 rides, 7 unfair (0.22%), avg HPI 1.001
+Zone 70 (Zone 70): 1,242 rides, 2 unfair (0.16%), avg HPI 1.001
+Zone 166 (Zone 166): 1,920 rides, 3 unfair (0.16%), avg HPI 1.003
+Zone 90 (Zone 90): 6,470 rides, 10 unfair (0.15%), avg HPI 1.001
+Zone 74 (Zone 74): 649 rides, 1 unfair (0.15%), avg HPI 0.998
+Zone 113 (Zone 113): 5,376 rides, 7 unfair (0.13%), avg HPI 1.000
+Zone 41 (Zone 41): 793 rides, 1 unfair (0.13%), avg HPI 1.002
+Zone 186 (Zone 186): 13,509 rides, 16 unfair (0.12%), avg HPI 1.000
+Zone 261 (Zone 261): 1,704 rides, 2 unfair (0.12%), avg HPI 1.000
+Zone 132 (Zone 132): 15,999 rides, 18 unfair (0.11%), avg HPI 1.001
+
+[SECTION 6: PEAK MANIPULATION HOURS]
+Hour 18: 30,023 rides, 40 unfair (0.13%), avg HPI 1.002
+Hour 16: 26,211 rides, 31 unfair (0.12%), avg HPI 1.003
+Hour 22: 17,544 rides, 19 unfair (0.11%), avg HPI 1.002
+Hour 17: 28,223 rides, 30 unfair (0.11%), avg HPI 1.001
+Hour 23: 13,187 rides, 14 unfair (0.11%), avg HPI 1.002
+Hour 20: 24,059 rides, 24 unfair (0.10%), avg HPI 1.000
+Hour 15: 26,582 rides, 24 unfair (0.09%), avg HPI 1.000
+Hour 10: 19,320 rides, 16 unfair (0.08%), avg HPI 0.999
+Hour 09: 15,017 rides, 12 unfair (0.08%), avg HPI 0.999
+Hour 14: 25,633 rides, 20 unfair (0.08%), avg HPI 1.000
+Hour 19: 28,149 rides, 21 unfair (0.07%), avg HPI 1.002
+Hour 00: 9,391 rides, 7 unfair (0.07%), avg HPI 1.000
+Hour 13: 23,976 rides, 16 unfair (0.07%), avg HPI 1.000
+Hour 12: 23,109 rides, 15 unfair (0.06%), avg HPI 1.000
+Hour 04: 1,573 rides, 1 unfair (0.06%), avg HPI 1.001
+Hour 05: 1,598 rides, 1 unfair (0.06%), avg HPI 0.998
+Hour 08: 11,208 rides, 7 unfair (0.06%), avg HPI 0.998
+Hour 06: 3,811 rides, 2 unfair (0.05%), avg HPI 0.998
+Hour 21: 21,664 rides, 11 unfair (0.05%), avg HPI 1.001
+Hour 01: 6,371 rides, 3 unfair (0.05%), avg HPI 0.999
+Hour 02: 4,297 rides, 2 unfair (0.05%), avg HPI 1.000
+Hour 11: 20,384 rides, 9 unfair (0.04%), avg HPI 0.999
+Hour 07: 7,999 rides, 2 unfair (0.03%), avg HPI 0.999
+Hour 03: 2,705 rides, 0 unfair (0.00%), avg HPI 1.002
+
+[SECTION 7: KEY FINDINGS]
+- About 0.08% of rides are priced above fair by more than 30%.
+- The highest-risk zone by unfair rate is Zone 220 (Zone 220) with 11.11% unfair rides.
+- The highest-risk hour is 18:00 with 0.13% unfair rides.
+- Total detected overcharge across unfair rides is about $10,383.96.
+- Unjustified surcharges under normal conditions: 327 rides (most suspicious).
+
+[SECTION 8: RECOMMENDATIONS]
+- Investigate pricing behaviour in high-risk zones with elevated HPI.
+- Increase monitoring during peak manipulation hours identified above.
+- Review congestion/weather-based surcharges for rides flagged as unfair.
+- Consider customer refunds or audits for unjustified surcharges.

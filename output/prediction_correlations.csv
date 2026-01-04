@@ -1,0 +1,4 @@
+,Linear Regression,Random Forest,HistGradientBoosting
+Linear Regression,1.0,0.7577427223245882,0.757934999907096
+Random Forest,0.7577427223245882,1.0,0.9971133454605092
+HistGradientBoosting,0.757934999907096,0.9971133454605092,1.0
