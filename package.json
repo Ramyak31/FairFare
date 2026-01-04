@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "fastapi": "^0.0.8",
+    "joblib": "^10.1.1",
+    "leaflet": "^1.9.4",
+    "numpy": "^0.0.1",
+    "pandas": "^0.0.3",
+    "pydantic": "^0.0.1-security",
+    "scikit-learn": "^0.1.0",
+    "uvicorn": "^0.0.1-security"
+  }
+}
