@@ -16,6 +16,46 @@ On top of the ML pipeline, we built a user-facing app design that simulates how 
 2. Model Price – a traditional pricing model baseline
 3. Hidden Fee – difference between the two (possible surge/extra margin)
 
+## Tech Used
+- **Python**: data processing, modeling, FastAPI backend
+- **FastAPI**: REST API for fare prediction
+- **scikit-learn**: model training (Linear Regression, Random Forest, HistGBR)
+- **Pandas / NumPy**: data prep and feature engineering
+- **React + Vite**: frontend UI
+- **Leaflet + OpenStreetMap**: interactive map and routing
+- **NOAA GSOD + NYC TLC data**: datasets for weather and taxi trips
+
+## How It Works (Simple Step-by-Step)
+1. **Collect data**: NYC taxi trips + taxi zones + daily weather data.
+2. **Clean & merge**: remove bad trips, match zones, attach weather by date.
+3. **Feature engineering**: add time, distance, and context features.
+4. **Train models**: Linear Regression, Random Forest, HistGBR.
+5. **Serve predictions**: FastAPI loads models and scaler/encoder.
+6. **UI interaction**: user selects pickup/dropoff, traffic, weather, car type.
+7. **Prediction result**: API returns:
+   - Fair taxi price (rule-based baseline)
+   - Model base price (ML ensemble)
+   - Hidden fee (difference between the two)
+   - Final AI fare with surge
+
+## Demo Steps
+1. Start the backend:
+   - `pip install -r requirements.txt`
+   - `cd backend`
+   - `uvicorn main:app --reload --port 8500`
+2. Start the frontend:
+   - `cd Frontend`
+   - `npm install`
+   - `npm run dev`
+3. Open the app in the browser (usually `http://localhost:5173`).
+4. Pick a **pickup** and **destination** (map or search).
+5. Adjust **traffic**, **weather**, and **car type**.
+6. Click **Get price details** and review:
+   - Fair Taxi Price
+   - Model Base Price
+   - Hidden Fee
+   - Final AI Fare
+
 ## Datasets Used:
 
 1. NYC Yellow Taxi Trip Data (2023): [https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page][https://d37ci6vzurychx.cloudfront.net/trip-data]
