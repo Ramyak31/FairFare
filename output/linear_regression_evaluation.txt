@@ -1,7 +1,7 @@
 Linear Regression Model – Fare Prediction
 =========================================
 
-Training duration: 2.41 seconds
+Training duration: 2.71 seconds
 
 TRAIN METRICS:
   RMSE : 5.3076

@@ -67,10 +67,26 @@ PROJECT DS/
 └── README.md
 
 ## To run the project
-Open terminal and run the below comments
-1. For starting front end:
-    cd Frontend
-    npm run dev
-2. For starting back end:
-    cd backend
-    uvicorn main:app --reload --port 8500
+
+### Backend (FastAPI)
+1. Install Python dependencies:
+   pip install -r requirements.txt
+2. (Optional) Configure env:
+   - `DEMO_MODE=1` to run without ML artifacts
+   - `CORS_ORIGINS=http://localhost:5173`
+3. Start API:
+   cd backend
+   uvicorn main:app --reload --port 8500
+
+### Frontend (Vite)
+1. Install dependencies:
+   cd Frontend
+   npm install
+2. (Optional) Configure API base:
+   - Create `Frontend/.env` with `VITE_API_BASE=http://localhost:8500`
+3. Start app:
+   npm run dev
+
+### Notebooks (data pipeline)
+Install extra notebook dependencies (optional):
+  pip install -r requirements-notebooks.txt

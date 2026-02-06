@@ -107,6 +107,33 @@ export default function SubComponent() {
     return `${lat.toFixed(5)}, ${lng.toFixed(5)}`;
   };
 
+  const geocodeSearch = async (query) => {
+    if (!query || !query.trim()) return null;
+    try {
+      const url = `https://nominatim.openstreetmap.org/search?format=jsonv2&q=${encodeURIComponent(
+        query
+      )}&limit=1`;
+      const res = await fetch(url, {
+        headers: {
+          "Accept-Language": "en",
+        },
+      });
+      if (!res.ok) throw new Error("Geocode search failed");
+      const data = await res.json();
+      if (data && data.length > 0) {
+        const item = data[0];
+        return {
+          lat: parseFloat(item.lat),
+          lng: parseFloat(item.lon),
+          label: item.display_name,
+        };
+      }
+    } catch (e) {
+      console.error("Geocode search error:", e);
+    }
+    return null;
+  };
+
   // ------------ Map init ------------
   useEffect(() => {
     const map = L.map("map", {
@@ -302,8 +329,26 @@ export default function SubComponent() {
     setShowEstimate(false);
 
     // 1️⃣ Resolve coordinates based on user input
-    const resolvedPickup = pickupCoords || LOCATION_COORDS[pickup] || null;
-    const resolvedDropoff = dropoffCoords || LOCATION_COORDS[dropoff] || null;
+    let resolvedPickup = pickupCoords || LOCATION_COORDS[pickup] || null;
+    let resolvedDropoff = dropoffCoords || LOCATION_COORDS[dropoff] || null;
+
+    // If user typed a custom location, try geocoding it
+    if (!resolvedPickup) {
+      const geo = await geocodeSearch(pickup);
+      if (geo) {
+        resolvedPickup = { lat: geo.lat, lng: geo.lng };
+        setPickup(geo.label);
+        setPickupCoords(resolvedPickup);
+      }
+    }
+    if (!resolvedDropoff) {
+      const geo = await geocodeSearch(dropoff);
+      if (geo) {
+        resolvedDropoff = { lat: geo.lat, lng: geo.lng };
+        setDropoff(geo.label);
+        setDropoffCoords(resolvedDropoff);
+      }
+    }
 
     if (!resolvedPickup || !resolvedDropoff) {
       setApiLoading(false);
@@ -312,6 +357,12 @@ export default function SubComponent() {
       );
       return;
     }
+
+    const validWeather =
+      WEATHER_OPTIONS.find((w) => w.condition === selectedWeather)?.condition ||
+      WEATHER_OPTIONS[0].condition;
+    const validCar =
+      CAR_TYPES.find((c) => c.type === selectedCar)?.type || CAR_TYPES[0].type;
 
     // 2️⃣ Build payload with dynamic coordinates
 
@@ -329,8 +380,8 @@ export default function SubComponent() {
       drop_lng: resolvedDropoff.lng,
       distance_km: distanceKm, // let backend recompute with haversine
       traffic_level: Number(traffic),
-      weather: weather.condition,
-      car_type: selectedCar,
+      weather: validWeather,
+      car_type: validCar,
       hour: new Date().getHours(),
       day_of_week: new Date().getDay(),
     };
@@ -387,7 +438,11 @@ export default function SubComponent() {
       console.log("Backend response:", data);
     } catch (err) {
       console.error(err);
-      setApiError("Could not get AI fare. Please try again.");
+      const detail =
+        err?.response?.data?.detail ||
+        err?.message ||
+        "Could not get AI fare. Please try again.";
+      setApiError(detail);
     } finally {
       setApiLoading(false);
       setShowEstimate(true);

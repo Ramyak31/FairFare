@@ -1,7 +1,7 @@
 Random Forest Regression – Evaluation Report
 ===========================================
 
-Training time: 301.99 seconds
+Training time: 319.30 seconds
 
 TRAIN METRICS:
   RMSE : 1.6569

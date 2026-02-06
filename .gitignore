@@ -1,0 +1,14 @@
+.env
+Frontend/.env
+Frontend/.env.local
+
+__pycache__/
+*.pyc
+
+Frontend/node_modules/
+Frontend/dist/
+
+data/raw/
+data/processed/
+output/
+models/

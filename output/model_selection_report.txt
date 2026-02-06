@@ -4,9 +4,9 @@ MODEL COMPARISON & SELECTION REPORT
 Comparison table (metrics):
                       Train_RMSE  Test_RMSE  Train_MAE  Test_MAE  Train_MAPE  Test_MAPE  Train_R2   Test_R2  Train_Time_s  Pred_Time_s  RMSE_Gap
 Model                                                                                                                                           
-Linear Regression       5.307594  12.508668   2.116691  2.196437   21.452854  18.627779  0.910100  0.387425           NaN     0.253020  7.201074
-Random Forest           1.656948   2.116527   0.403223  0.559040   12.437571  11.529472  0.991238  0.982462           NaN     9.622514  0.459579
-HistGradientBoosting    2.230088   2.318082   0.623631  0.636380   16.260962  12.734553  0.984129  0.978962           NaN     2.112024  0.087994
+Linear Regression       5.307594  12.508668   2.116691  2.196437   21.452854  18.627779  0.910100  0.387425           NaN     0.390349  7.201074
+Random Forest           1.656948   2.116527   0.403223  0.559040   12.437571  11.529472  0.991238  0.982462           NaN     9.267397  0.459579
+HistGradientBoosting    2.230088   2.318082   0.623631  0.636380   16.260962  12.734553  0.984129  0.978962           NaN     2.036529  0.087994
 
 Overfitting analysis (RMSE Gap = Test_RMSE - Train_RMSE):
 Model
